@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header></header>
+    <section></section>
+    <footer></footer>
+    <script type="text/babel">
+      function Navbar() {
+        const bouton1 = "Acceuil";
+        const bouton2 = "Competence";
+        const bouton3 = "Contact";
+
+        return (
+          <div id="Navbar">
+            <ul id="ulNavBar">
+              <li id={bouton1}> {bouton1} </li>
+              <li id={bouton2}> {bouton2} </li>
+              <li id={bouton3}> {bouton3} </li>
+            </ul>
+          </div>
+        );
+      }
+      ReactDOM.render(<Navbar />, document.querySelector("header"));
+      function Card() {
+        let Nom = "Jean-Rene Decoster";
+        let Accroche = "C'est en forgeant qu on deviens forgeron";
+        let img = "img/avatar.webp";
+        return (
+          <section id="sec1">
+            <div id="card">
+              {Nom}
+              <div id="cardImg">
+                <img src={img} alt="{Nom}" id="image" />
+              </div>
+              <div id="cardTxt">{Accroche}</div>
+            </div>
+          </section>
+        );
+      }
+      function Techno() {
+        let techno = [
+          { name: "html", img: "img/html.png", projet: "Presentation" },
+          { name: "CSS", img: "img/css.png", projet: "Animaux en css" },
+          {
+            name: "Bootstrap",
+            img: "img/bootsrap.jpg",
+            projet: "Un peu partout",
+          },
+          { name: "JS", img: "img/js.png", projet: "Animation" },
+          { name: "PHP", img: "img/php.jpg", projet: "Pokedex" },
+          {
+            name: "WordPress",
+            img: "img/wordpress.png",
+            projet: "Site Vitrine",
+          },
+          { name: "React", img: "img/react.png", projet: "Ce projet" },
+        ];
+
+        return (
+          <section id="sec2">
+            {techno.map((tech) => (
+              <div id="cardTech">
+                <p key={tech.name}>
+                  <div id="card">
+                    {tech.name}
+                    <div id="cardImg">
+                      <img src={tech.img} alt="{Nom}" id="image" />
+                    </div>
+                    <div id="cardTxt">{tech.projet}</div>
+                  </div>
+                </p>
+              </div>
+            ))}
+          </section>
+        );
+      }
+
+      ReactDOM.render(
+        <React.Fragment>
+          <Card />
+          <Techno />
+        </React.Fragment>,
+        document.querySelector("section")
+      );
+
+      // ReactDOM.render(<Techno />, document.querySelector("section"));
+
+      function Contact() {
+        const gitHub = "GitHub";
+        const linkedIn = "LinkedIn";
+        return (
+          <div>
+            <p className="footimg">
+              <a href="https://github.com/Jreuh">
+                {" "}
+                <img className="footimg" src="img/github.png" alt="" />
+              </a>
+            </p>
+            <p>
+              <a href="https://www.linkedin.com/in/jean-ren%C3%A9-decoster-6b2476231/">
+                {" "}
+                <img className="footimg" src="img/linkedin.png" alt="" />
+              </a>
+            </p>
+          </div>
+        );
+      }
+      ReactDOM.render(<Contact />, document.querySelector("footer"));
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+#ulNavBar {
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  text-decoration: none;
+  list-style: none;
+  background-color: orangered;
+  margin: auto;
+  height: 60px;
+  align-items: center;
+}
+#sec1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#sec2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#card {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  border: 5px black solid;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+#image {
+  height: 50px;
+  width: 50px;
+}
+#card,
+#cardTxt,
+#cardImage {
+  margin: 10px;
+}
+/* section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 150;
+} */
+.footimg {
+  height: 50px;
+  width: 50px;
+}
